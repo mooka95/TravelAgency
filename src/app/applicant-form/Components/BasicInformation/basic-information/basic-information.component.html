@@ -71,8 +71,8 @@
                <div class="row ">
                
                 <div class="col-lg form-group">
-                    <input ngModel   name="mobile" minlength="6"    placeholder="Contact Number"  class="form-control" id="mobileNumber"  type="number" required >
-                    <small id="numberHelp" class="form-text text-muted">Please Start with 971</small>
+                    <input  ngModel   pattern="[971][0-9]{11}"  name="mobile"      placeholder="Contact Number"  class="form-control" id="mobileNumber"  type="number" required >
+                    <small id="numberHelp" class="form-text text-muted">Please Start with 971 && type 10-digits</small>
                     
                 </div>
                 <div class="col-xl form-group"> 
