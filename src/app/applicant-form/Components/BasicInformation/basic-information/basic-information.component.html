@@ -1,0 +1,97 @@
+<div class="container-fluid ">
+ 
+    <div class="row">
+        <div class="col-lg-5">
+            <img style="width:100%;height:100%" src="../assets/Images/Capture.PNG">
+          </div>
+        <form class="col-lg "  #userForm = "ngForm"  (ngSubmit) = "onSubmitForm(userForm)" >
+          <h1 style="text-align:center">Apply now to work in Dubai </h1>
+            <div class="row  formBar" >
+              
+                <div class="col-lg form-group">
+                    <input name="firstName" placeholder="First Name" type="text" class="form-control" id="firstName"  ngModel required>
+                   
+                </div>
+             
+                <div class="col-lg form-group"> 
+                    <input    name="lastName" placeholder=" LastName" class="form-control" id="lastName"  ngModel required>
+                    </div>
+   
+               </div>
+                <div class="row formBar" >
+                <div class="col-lg">
+                    <label for="dateOfBirth">Date Of Birth </label>
+                    
+          
+                      <input style="margin-left: 10px;"  type="date" id="dateOfBirth"  name="dateOfBirth" placeholder="Date Of Birth"   ngModel required>
+                    
+
+
+
+                </div>
+                <div class="col-lg ">
+                    <div >Gender</div>
+                <div class="row ">
+                   
+                    <div class="col-lg form-check"  >
+                        <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1" ngModel   required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check col-lg">
+                        <input class="form-check-input" type="radio" value="female" name="gender"  ngModel  id="flexRadioDefault2" required >
+                        <label class="form-check-label" for="flexRadioDefault2"  >
+                        Female
+                        </label>
+                      </div>
+
+                       
+                </div>
+                </div>
+   
+               </div>
+               <div class="row formBar">
+                <div class="col-lg">
+                  <div class="col-lg form-group">
+                    <input name="nationality" placeholder="Nationality" type="text" class="form-control" id="nationalityId"  ngModel required>
+                   
+                </div>
+            
+            </div>
+                <div class="col-lg">     
+                  <div class="col-lg form-group">
+                    <input name="residence" placeholder="Country of residence" type="text" class="form-control" id="countryResidenceId"   ngModel required>
+                   
+                </div>
+                  </div>
+   
+               </div>
+               <div class="formBar">How We Can Contact You?</div>
+               <div class="row ">
+               
+                <div class="col-lg form-group">
+                    <input ngModel   name="mobile" minlength="6"    placeholder="Contact Number"  class="form-control" id="mobileNumber"  type="number" required >
+                    <small id="numberHelp" class="form-text text-muted">Please Start with 971</small>
+                    
+                </div>
+                <div class="col-xl form-group"> 
+                    <input  ngModel  name="email" placeholder=" Email Address" type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                    <small  id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+   
+               </div>
+   <button [disabled]="!userForm.valid"  style="float: right;background-color:#4734E1;color:white"  type="submit" class="btn  rounded-pill " >Apply Now</button>
+            
+ 
+
+        </form> 
+       
+     
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,140 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top:20px">
+        <h1 class="col-sm">digg</h1>
+        <div class="col-sm">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" [style.width]="progressbarWidth+'%' ">
+                
+                </div>
+              </div>
+          </div>
+    </div>
+</div>
+
+<div class="container-fluid"  *ngIf="formNumber==1">
+
+<div>
+<div>Have You Ever Visited Dubai?</div>
+<div class="d-flex  answers">
+  <button class="btn rounded-pill"  (click)="question('visited dubai ','yes')" value="Yes">👍 Yes</button>
+   <button class="btn  rounded-pill ml-4 "   (click)="question('visited dubai ','No')" value="no">👎  No</button>
+</div>
+</div>
+<div class="forms">
+<div>Do You Have Any Friends Or Family in Dubai?</div>
+<div class="d-flex  answers">
+   
+<button class="btn rounded-pill " (click)="question('Have any friends','yes')">👍 Yes</button>
+<button class="btn  rounded-pill ml-4 "  (click)="question('Have any friends','no')">👎  No</button>
+</div>
+</div>
+<div class="forms" >
+    <div >How long do you want to stay in stay in Dubai?</div>
+<div  class="row d-flex answers ">
+    
+  <button class="btn rounded-pill col-lg">📅 Upto 3 months</button>
+  <button class="btn rounded-pill col-lg ">📅 3 to 6 months</button>
+  <button class="btn rounded-pill col-lg ">📅  6 to 12 months</button>
+  <button class="btn rounded-pill col-lg ">📅 +12 months</button>
+  <button class="btn rounded-pill col-lg ">📅 +3 Years</button>
+</div>
+</div>
+
+
+</div>
+<div class="container-fluid"  *ngIf="formNumber==2">
+    <div>Why do you want to come to dubai?</div>
+    <div class="d-flex answers  flex-wrap" style="margin-top:20px">
+        <div class="row">
+        <div class="col-lg">
+        <button class="btn rounded-pill" (click)="chooseActivitesToDoInDubai('LifeStyle')"    >😃 Life Style</button>
+        <button class="btn rounded-pill " (click)="chooseActivitesToDoInDubai('Work opportunities')"    >👨‍💼 Work opportunities</button>
+        <button class="btn rounded-pill "(click)="chooseActivitesToDoInDubai('Finance')"   >💵  Finance</button>
+        <button class="btn rounded-pill " (click)="chooseActivitesToDoInDubai('tourism')"    >🛫 tourism</button>
+        <button class="btn rounded-pill "(click)="chooseActivitesToDoInDubai('Family')"    >👨‍👧‍👧 Family</button>
+        <button class="btn rounded-pill "(click)="chooseActivitesToDoInDubai('Business')"    >classic Business</button>
+        <button class="btn rounded-pill "(click)="chooseActivitesToDoInDubai('Security')"    >🔒 Security</button>
+        <button class="btn rounded-pill "(click)="chooseActivitesToDoInDubai('The Weather')"  >☀️ The Weather</button>
+        <button class="btn rounded-pill " (click)="chooseActivitesToDoInDubai('Meeting new people')">🤝 Meeting new people</button>
+        <button class="btn rounded-pill" (click)="chooseActivitesToDoInDubai('Culture')"> Culture</button>
+        
+    </div>
+</div>
+
+
+
+      </div>
+      <div class="row" *ngIf= "listOfReasonsToVistDubai.length>0">
+        <h4 class="col-lg">  I want to Come Dubai For:</h4>
+     </div>
+     
+     <div class="row">
+         <div class="col-lg"> <button (click)="removeActivity(activity)" style="background-color: #4734E1;color: white" class="btn rounded-pill" *ngFor="let activity of  listOfReasonsToVistDubai">{{activity}}  </button></div>
+        
+     
+     
+     </div>
+     
+     
+    
+</div>
+<div class="container-fluid"  *ngIf="formNumber==3">
+    <div>What is your level of education?</div>
+    <div class="d-flex answers  flex-wrap" style="margin-top:20px">
+        <div class="row">
+        <div class="col-lg">
+        <button class="btn rounded-pill" (click)="chooseYourEducation('High school or less')"   >📖 High school or less</button>
+        <button class="btn rounded-pill " (click)="chooseYourEducation('Collage')"    >📖 Collage</button>
+        <button class="btn rounded-pill "(click)="chooseYourEducation('Diploma')"   >📖  Diploma</button>
+        <button class="btn rounded-pill " (click)="chooseYourEducation('Batchelors')" >📖 Batchelors</button>
+  
+    </div>
+</div>
+
+
+
+
+      </div>
+      <div class="row"  *ngIf= "educationLevel" style="margin-top:20px">
+        <h4 class="col-lg">  MyEducation Level Is:</h4>
+     </div>
+     <br>
+     <div class="row" *ngIf= "educationLevel">
+         <div class="col-lg"> <button (click)="removeEducation()" style="background-color: #4734E1;color: white" class="btn rounded-pill">{{educationLevel}}  </button></div>
+     
+     </div>
+
+    
+</div>
+<div class="container-fluid"  *ngIf="formNumber==4">
+    <div class="row" >Complete-Review Your Application</div>
+    
+  
+        <div  style="background-color: #F3F3F3; text-align:center" >
+            <div >First Name: {{firstName}}</div>
+            <div >last Name:  {{lastName}}</div>
+            <div >dateOfBirth: {{dateOfBirth}}</div>
+            <div >gender: {{gender}}</div>
+            <div >Nationality {{ nationality}}</div>
+            <div >Residance: {{residence}}</div>
+        </div>
+    </div>
+    <div class="container-fluid"  *ngIf="formNumber==4" style="background-color: #F3F3F3;margin-top: 30px;">
+        
+          <div>Why do you want to come to Dubai?</div>
+          <button  class="btn rounded-pill" style="background-color: #4734E1;"  *ngFor="let activity of  listOfReasonsToVistDubai"> {{activity}}</button>
+          <div>What is your level of education?</div>
+          <button class="btn rounded-pill" style="background-color: #4734E1;">{{educationLevel}}</button>
+         
+        
+    </div>
+          
+
+    
+
+
+<div class="forms"  >
+    <button (click)="goToBackForm()" style="float: left;background-color: #FFFFFF;color:black"  type="submit" class="btn btn-primary rounded-pill ">Back</button>
+    <button  *ngIf="formNumber!==numberOfForms" (click)="goToNextForm()" style="float: left;background-color: #4734E1;"  type="submit" class="btn btn-primary rounded-pill ">Next</button>
+    <button  *ngIf="formNumber===numberOfForms" style="float: left;background-color: #4734E1;"  type="submit" class="btn btn-primary rounded-pill ">Complete Application</button>
+    </div>
