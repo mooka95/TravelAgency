@@ -121,10 +121,12 @@
     </div>
     <div class="container-fluid"  *ngIf="formNumber==4" style="background-color: #F3F3F3;margin-top: 30px;">
         
-          <div>Why do you want to come to Dubai?</div>
+          <h1>Why do you want to come to Dubai?</h1>
           <button  class="btn rounded-pill" style="background-color: #4734E1;"  *ngFor="let activity of  listOfReasonsToVistDubai"> {{activity}}</button>
-          <div>What is your level of education?</div>
-          <button class="btn rounded-pill" style="background-color: #4734E1;">{{educationLevel}}</button>
+          <div  *ngIf="listOfReasonsToVistDubai.length===0"> You Don't choose any reason to visit dubai</div>
+          <h1>What is your level of education?</h1>
+          <button class="btn rounded-pill" style="background-color: #4734E1;" *ngIf="educationLevel">{{educationLevel}}</button>
+          <div   *ngIf="!educationLevel" style="color:black">You Don't choose any education level' </div>
          
         
     </div>

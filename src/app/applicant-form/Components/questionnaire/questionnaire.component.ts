@@ -13,7 +13,7 @@ export class QuestionnaireComponent implements OnInit {
   progressbarWidth:number=25;
   toggle :boolean= false;
  listOfReasonsToVistDubai:string[]=[]
- educationLevel:string;
+ educationLevel:string='';
  everVisitedDubai:boolean;
  haveEverVisitedDubai;
  howLongStayedinDubai:boolean;
